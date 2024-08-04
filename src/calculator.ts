@@ -1,17 +1,10 @@
 export class Calculator {
-    add(a: number, b: number): number {
-        return a + b;
-    }
+    add(input: string): number {
+        if (input === '') return 0;
+        let delimiter = /,/;
 
-    subtract(a: number, b: number): number {
-        return a - b;
-    }
+        const numbers = input.split(delimiter).map(Number);
 
-    multiply(a: number, b: number): number {
-        return a * b;
-    }
-
-    divide(a: number, b: number): number {
-        return a / b;
+        return numbers.reduce((sum, num) => sum + num, 0);
     }
 }
