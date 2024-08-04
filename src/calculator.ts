@@ -1,4 +1,5 @@
 export class Calculator {
+
     add(input: string): number {
         if (input === '') return 0;
 
@@ -17,5 +18,17 @@ export class Calculator {
         }
 
         return numbers.reduce((sum, num) => sum + num, 0);
+    }
+
+    subtract(a: number, b: number): number {
+        return a - b;
+    }
+
+    multiply(a: number, b: number): number {
+        return a * b;
+    }
+
+    divide(a: number, b: number): number {
+        return a / b;
     }
 }
