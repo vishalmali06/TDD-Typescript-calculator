@@ -22,6 +22,12 @@ describe('Calculator', () => {
     expect(calculator.add('//#\n2#3#4')).toBe(9);
   });
 
+  it('should multiply numbers when the delimiter is @', () => {
+    expect(calculator.add('//@\n2@3')).toBe(6);
+    expect(calculator.add('//@\n4@5')).toBe(20);
+  });
+
+  
   it('should throw an exception for negative numbers', () => {
     expect(() => calculator.add('1,-2,3')).toThrow('negative numbers not allowed: -2');
     expect(() => calculator.add('1,-2,-3')).toThrow('negative numbers not allowed: -2, -3');
